@@ -5,7 +5,6 @@
   "scripts": {
     "postinstall": "npx simple-git-hooks",
     "build": "rollup --config=rollup.config.ts --configPlugin rollup-plugin-esbuild",
-    "build:tsc": "tsc",
     "lint:check": "eslint . --cache",
     "lint": "eslint . --cache --fix",
     "start": "tsx src/index.ts"
