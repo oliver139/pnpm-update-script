@@ -1,7 +1,7 @@
 {
-  "name": "ts-eslint-base",
-  "version": "1.0.1",
-  "description": "",
+  "name": "pnpm-update-script",
+  "version": "1.0.0",
+  "description": "Updating the node version being used in all global packages after updating pnpm",
   "scripts": {
     "postinstall": "npx simple-git-hooks",
     "build": "rollup --config=rollup.config.ts --configPlugin rollup-plugin-esbuild",
@@ -10,12 +10,15 @@
     "lint": "eslint . --cache --fix",
     "start": "tsx src/index.ts"
   },
-  "keywords": [],
+  "keywords": ["pnpm", "update"],
   "author": "Oliver Mak",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oliver139/ts-eslint-base"
+    "url": "https://github.com/oliver139/pnpm-update-script"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -47,5 +50,8 @@
     "*.{js,mjs,cjs,ts,mts,cts}": [
       "eslint --cache --fix"
     ]
+  },
+  "bin": {
+    "pnup": "./bin/index.js"
   }
 }
