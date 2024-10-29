@@ -1,9 +1,9 @@
 {
   "name": "pnpm-update-script",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Updating the node version being used in all global packages after updating pnpm",
   "scripts": {
-    "postinstall": "npx simple-git-hooks",
+    "prestart": "npx simple-git-hooks",
     "build": "rollup --config=rollup.config.ts --configPlugin rollup-plugin-esbuild",
     "lint:check": "eslint . --cache",
     "lint": "eslint . --cache --fix",
