@@ -1,52 +1,23 @@
 import del from "rollup-plugin-delete";
 import esbuild from "rollup-plugin-esbuild";
-import json from "@rollup/plugin-json";
-import { dts } from "rollup-plugin-dts";
 
 export default [
   {
     input: "src/index.ts",
     output: [
       {
-        dir: "dist",
+        dir: "bin",
         format: "cjs",
-        sourcemap: true,
-      },
-      {
-        dir: "dist",
-        format: "esm",
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
+    external: ["child_process"],
     plugins: [
-      del({ targets: "dist/*" }),
+      del({ targets: "bin/*" }),
       esbuild({
         minify: true,
-        drop: ["console", "debugger"],
+        drop: ["debugger"],
       }),
-      json(),
     ],
-  },
-  {
-    input: "src/index.ts",
-    output: [
-      {
-        file: "dist/index.d.cts",
-        format: "cjs",
-      },
-      {
-        file: "dist/index.d.mts",
-        format: "esm",
-      },
-      {
-        file: "dist/index.d.ts",
-        format: "es",
-      },
-    ],
-    plugins: [dts({
-      // https://github.com/Swatinem/rollup-plugin-dts/issues/143
-      compilerOptions: { preserveSymlinks: false },
-      respectExternal: true,
-    })],
   },
 ];
