@@ -1,6 +1,6 @@
 {
   "name": "pnpm-update-script",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "packageManager": "pnpm@10.6.2",
   "description": "Updating the node version being used in all global packages after updating pnpm",
   "author": "Oliver Mak",
@@ -16,6 +16,9 @@
   "bin": {
     "pnup": "./bin/index.js"
   },
+  "files": [
+    "bin"
+  ],
   "engines": {
     "node": ">=16"
   },
@@ -26,7 +29,7 @@
     "lint:fix": "eslint . --cache --fix",
     "lint:inspect": "eslint --inspect-config",
     "start": "tsx src/index.ts",
-    "prepack": "nr build",
+    "prerelease": "nr build && git add bin && git commit -m 'Update bin'",
     "release": "bumpp && pnpm publish"
   },
   "devDependencies": {
