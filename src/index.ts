@@ -16,8 +16,7 @@ console.log('\n=========================================')
 console.log('Updating...')
 console.log('=========================================\n')
 
-execSync(`pnpm self-update`)
-execSync(`pnpm add -g ${deps.join(' ')}`, { stdio: 'inherit' })
+execSync(`pnpm self-update && pnpm add -g ${deps.join(' ')}`, { stdio: 'inherit' })
 
 console.log('\n=========================================')
 console.log('Done')
