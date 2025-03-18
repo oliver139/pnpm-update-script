@@ -20,7 +20,7 @@
     "bin"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "prepare": "npx simple-git-hooks",
