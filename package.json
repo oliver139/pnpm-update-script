@@ -20,15 +20,17 @@
     "node": ">=16"
   },
   "scripts": {
+    "prepare": "npx simple-git-hooks",
     "build": "rollup --config=rollup.config.ts --configPlugin rollup-plugin-esbuild",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "lint:inspect": "eslint --inspect-config",
     "start": "tsx src/index.ts",
-    "prepare": "npx simple-git-hooks",
+    "prepack": "nr build",
     "release": "bumpp && pnpm publish"
   },
   "devDependencies": {
+    "@antfu/ni": "^24.2.0",
     "@oliver139/eslint-config": "^2.0.4",
     "@rollup/plugin-json": "^6.1.0",
     "@tsconfig/recommended": "1.0.8",
