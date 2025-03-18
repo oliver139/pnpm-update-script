@@ -1,7 +1,7 @@
 {
   "name": "pnpm-update-script",
-  "version": "2.1.0",
-  "packageManager": "pnpm@10.6.2",
+  "version": "2.1.1",
+  "packageManager": "pnpm@10.6.4",
   "description": "Updating the node version being used in all global packages after updating pnpm",
   "author": "Oliver Mak",
   "license": "MIT",
